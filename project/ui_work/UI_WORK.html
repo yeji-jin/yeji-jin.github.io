@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI WORK</title>
+    <link rel="stylesheet" href="../../common/css/reset.css">
+    <link rel="stylesheet" href="../../common/css/work.css">
+    <link rel="stylesheet" href="../../common/css/common.css">
+</head>
+<body>
+    <div id="app" class="wrapper">
+        <ul class="work-list">
+            <li class="list">
+                <!-- HOME NAV -->
+                <div class="shape-wrapper">
+                    <div class="home-nav bg1">
+                        <home-nav></home-nav>
+                    </div>
+                </div>
+                <div class="list-desc">
+                    <strong class="list-num" >01.</strong>
+                    <h4 class="work-tit">네비바 UI구현</h4>
+                    <p class="work-txt">
+                        공통의 리스트를 반복문을 돌려 구현하였습니다.<br>
+                        더보기 클릭시, 숨어있던 nav들이 등장합니다.
+                    </p>
+                </div>
+            </li>
+            <li class="list">
+                <!-- CART LIST -->
+                <div class="shape-wrapper">
+                    <div class="cart-list bg1">
+                        <cart-list></cart-list>
+                    </div>
+                </div>
+                <div class="list-desc">
+                    <strong class="list-num" >02.</strong>
+                    <h4 class="work-tit">장바구니 UI구현</h4>
+                    <p class="work-txt">
+                        공통의 리스트를 반복문을 돌려 구현하였으며<br>
+                        일시품절, 체험상품, 배송타입 등 다양한 케이스에 맞게 구현하였습니다.
+                    </p>
+                </div>
+            </li>
+            <li class="list">
+                <!-- 카테고리 -->
+                <div class="shape-wrapper">
+                    <div class="cart-list bg1">
+                        <category></category>
+                    </div>
+                </div>
+                <div class="list-desc">
+                    <strong class="list-num" >03.</strong>
+                    <h4 class="work-tit">카테고리 UI구현</h4>
+                    <p class="work-txt">
+                        공통의 리스트를 반복문을 돌려 구현하였으며<br>
+                        할인, 리뷰별점 , 라벨의 케이스를 구분하였습니다.<br>
+                        Nav / Cart / SortBtn을 클릭시 UI가 변경됩니다.
+                    </p>
+                </div>
+            </li>
+            <li class="list">
+                <!-- 캘린더 -->
+                <div class="shape-wrapper">
+                    <div class="cart-list bg1">
+                        <calendar></calendar>
+                    </div>
+                </div>
+                <div class="list-desc">
+                    <strong class="list-num" >04.</strong>
+                    <h4 class="work-tit">출석체크 이벤트 캘린더 구현</h4>
+                    <p class="work-txt">
+                        new Date()함수를 이용하여 날짜들을 모두 받아 온 후 캘린더를 구현하였습니다.<br>
+                        7 / 15 / 30 일 연속으로 출석시, 캐쉬가 지급됩니다.
+                    </p>
+                </div>
+            </li>
+            <li class="list">
+                <!-- 회원등급 -->
+                <div class="shape-wrapper">
+                    <div class="cart-list bg1">
+                        <membership></membership>
+                    </div>
+                </div>
+                <div class="list-desc">
+                    <strong class="list-num" >05.</strong>
+                    <h4 class="work-tit">멤버쉽 UI 구현</h4>
+                    <p class="work-txt">
+                        하나의 템플릿에 4개의 멤버쉽 등급으로 나누어,<br>
+                        클릭 할때 마다, 등급에 맞게 화면이 바뀌도록 구현되었습니다.
+                    </p>
+                </div>
+            </li>
+            <li class="list">
+                <!--랜덤뽑기-->
+                <div class="shape-wrapper">
+                    <div class="cart-list bg1">
+                        <random-gift></random-gift>
+                    </div>
+                </div>
+                <div class="list-desc">
+                    <strong class="list-num" >06.</strong>
+                    <h4 class="work-tit">랜덤뽑기 이벤트 구현</h4>
+                    <p class="work-txt">
+                        랜덤상품으로 지급 될 상품들을 Object에 담아 둔 후<br>
+                        랜덤 함수을 구현하여, 클릭을 할 때마다 랜덤상품이 나오도록 구현되었습니다.
+                    </p>
+                </div>
+            </li>
+            <li class="list">
+                <!--퀴즈 맞추기-->
+                <div class="shape-wrapper">
+                    <div class="cart-list bg1">
+                        <quiz></quiz>
+                    </div>
+                </div>
+                <div class="list-desc">
+                    <strong class="list-num" >07.</strong>
+                    <h4 class="work-tit">퀴즈 이벤트 구현</h4>
+                    <p class="work-txt">
+                        각 퀴즈의 정답을 모두 체크해야만 정답 확인이 가능하며<br>
+                        모두 맞추지 못할 시에는 다시 풀 기회가 주어집니다.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+    <script src="../../common/libs/httpVueLoader.js"></script>
+    <script src="../../common/libs/swiper.js"></script>
+    
+    <script>
+        var app = new Vue({
+          el: '#app',
+          components : {
+            'home-nav': httpVueLoader('./Component/HomeNav.vue'),
+            'cart-list': httpVueLoader('./Component/CartList.vue'),
+            'category' : httpVueLoader('./Component/Category.vue'),
+            'calendar' : httpVueLoader('./Component/Calendar.vue'),
+            'membership' : httpVueLoader('./Component/Membership.vue'),
+            'random-gift' : httpVueLoader('./Component/RandomGift.vue'),
+            'quiz' : httpVueLoader('./Component/Quiz.vue'),
+          },
+        })
+      </script>
+</body>
+</html>
