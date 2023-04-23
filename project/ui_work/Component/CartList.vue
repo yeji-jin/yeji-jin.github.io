@@ -37,7 +37,7 @@
 <script>
     module.exports = {
         components: {
-            'cart-item-list': httpVueLoader('./cartItemList.vue'), 
+            'cart-item-list': httpVueLoader('./CartItemList.vue'), 
         },
         props:[],
         data() {
