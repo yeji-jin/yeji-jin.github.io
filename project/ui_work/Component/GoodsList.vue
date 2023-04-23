@@ -90,7 +90,7 @@
 <style scoped>
 .category-list{ padding:0 4px 40px; width:50%; }
 .category-list .cart-disable-mask{ position: relative; }
-.category-list .thumb{ width: 100%;}
+.category-list .thumb{ width: 100%; border-radius: 4px; }
 .category-list .prdt-info{ padding-top:10px;}
 .info-label{ padding:2px 4px; margin-right: 2px; font-size: 10px; background: #a09d9d; color:#fff; border-radius: 2px;}
 .star{font-size: 16px; margin-right: 2px;  color:orange;}

@@ -183,8 +183,7 @@
                 {// 리뷰 존재 
                     disabled : false,
                     label:'best',
-                    thumb:'https://img.glyde.co.kr/products/thnail/20220215/GM0021041901065-1-133224-158x158_EQL.webp',
-                    // thumb:'../common/images/tmp/tmp_food.jpg',
+                    thumb:'../../common/images/tmp/tmp-food-thumb.jpg',
                     info:'냉장', 
                     headCopy: '222맛있는 음식맛있는 음식맛있는 음식맛있는 음식맛있는 음식맛있는 음식 ',
                     name: '22최대두줄최대두줄최대두줄최대두줄최대두줄최대두줄최대두줄최대두줄최대두줄최대두줄최대두줄',

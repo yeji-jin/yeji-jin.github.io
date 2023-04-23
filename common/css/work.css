@@ -3,9 +3,9 @@ body{background: #fff1e5;}
 .bg1{background: #fff;}
 .work-list{display: flex; flex-direction: column; margin: 0 auto; max-width: 1200px; }
 .work-list > .list{ display: flex; align-items: center; margin:5% 3%; gap: 60px; }
-.work-list > .list .list-num{ font-size: 120px; color: #b09999;}
+.work-list > .list .list-num{ display: block; margin-bottom: 20px; font-size: 120px; color: #b09999; border-bottom: 1px solid #b09999; }
 .work-list > .list:nth-child(2n){flex-direction: row-reverse;}
-.work-list > .list:nth-child(2n) .list-num{color:#836262;}
+.work-list > .list:nth-child(2n) .list-num{color:#836262; border-bottom: 1px solid #836262;}
 .shape-wrapper{ position: relative; flex:2; margin:2%; padding:60px 20px 40px; min-width: 400px; max-width: 55%; background: #000; border-radius: 28px; }
 .shape-wrapper + .shape-wrapper{ margin-top:10%; }
 .shape-wrapper::before{ content: ""; position: absolute; top:30px; left:50%; transform: translateX(-50%); width:70px; height: 4px; border-radius: 2px; background: #ccc; }
