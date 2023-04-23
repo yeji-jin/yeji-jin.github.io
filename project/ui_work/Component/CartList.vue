@@ -82,7 +82,7 @@
                         disabled:false,
                         detailPage:'#',
                         label:'new',
-                        thumb:'../../common/images/tmp/tmp-food_2.jpg',
+                        thumb:'../../common/images/tmp/tmp-food-thumb_2.jpg',
                         name:'상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이',
                         status:'ice',
                         price:'4,500',
@@ -93,7 +93,7 @@
                         label:'soldout',
                         detailPage:'#',
                         label:'soldout',
-                        thumb:'../../common/images/tmp/tmp-food_2.jpg',
+                        thumb:'../../common/images/tmp/tmp-food-thumb_2.jpg',
                         name:'상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이',
                         status:'frozen',
                         price:'4,500'
@@ -102,7 +102,7 @@
                         disabled:false,
                         detailPage:'',
                         label:'best',
-                        thumb:'../../common/images/tmp/tmp-food_2.jpg',
+                        thumb:'../../common/images/tmp/tmp-food-thumb_2.jpg',
                         name:'상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이',
                         status:'ice',
                         price:'4,500'
@@ -110,7 +110,7 @@
                 { //discount case
                         disabled:false,
                         detailPage:'',
-                        thumb:'../../common/images/tmp/tmp-food_2.jpg',
+                        thumb:'../../common/images/tmp/tmp-food-thumb_2.jpg',
                         name:'상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이',
                         status:'ice',
                         price:'4,500'
@@ -118,7 +118,7 @@
                 { //freeGift case
                         disabled:false,
                         detailPage:'',
-                        thumb:'../../common/images/tmp/tmp-food_2.jpg',
+                        thumb:'../../common/images/tmp/tmp-food-thumb_2.jpg',
                         name:'상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이',
                         status:'ice',
                         price:'4,500'
