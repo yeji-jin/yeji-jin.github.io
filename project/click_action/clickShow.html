@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intro test</title>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <link rel="stylesheet" href="../common/css/reset.css">
+    <link rel="stylesheet" href="../../common/css/reset.css">
     <style>
-      body{background: #000; color:#fff; overflow: hidden;}
-      .click-wrapper{ position: relative; display: flex; justify-content: center; align-items: center; height: 100%;}
-      .bg-txt{ font-size: 8vw; font-weight: 700; letter-spacing: 2px; z-index: 99; user-select: none; pointer-events: none; text-shadow: 0 20px 30px rgba(0,0,0,.25); }
-      .splash{ position: absolute; width: 300px; height: 300px; transform: translate(-50%,-50%); pointer-events: none; transition: all ease-in 1.5s; /*animation: showSplash 3s linear infinite;*/ }
-      @keyframes showSplash {
-        0%{ transform: translate(-50%,-50%) scale(0); opacity: 0; }
-        5% , 95%{ transform: translate(-50%,-50%) scale(1); opacity: 1; }
-        100%{ transform: translate(-50%,-50%) scale(2); opacity: 0; }
+      body{background: #000; color:#fff; overflow: hidden; background: url(../../common/images/bg_green_forest.jpg); background-size: cover; transition: all .8s;}
+      .click-wrapper{ position: relative; display: flex; justify-content: center; align-items: center; height: 0; }
+      .bg-txt{ font-size: 8vw; font-weight: 700; letter-spacing: 2px; z-index: 99; user-select: none; text-shadow: 0 10px 20px rgba(0,0,0,.3); visibility: hidden; }
+      .click-wrapper.on{ height: 100%; }
+      .click-wrapper.on .bg-txt{ visibility: visible; }
+      .splash{ position: absolute; width: 100px; height: 100px; transform: translate(-50%,-50%); z-index: 100; will-change: left; }
+      .btn-start{ position: fixed; top: 50%; left:50%; transform: translate(-50%,-50%); width: 100%; max-width: 300px; height: 80px; z-index: 100; user-select: none; font-size: 18px; color:#fff; background: forestgreen; border-radius: 10px; box-shadow: 6px 6px 4px 2px rgba(49 ,82, 34, 0.5); letter-spacing: 2px; animation: scaleChange 1s infinite alternate; }
+      @keyframes scaleChange {
+        0%,50%{ transform: translate(-50%,-50%) scale(1);}
+        100%{ transform: translate(-50%,-50%) scale(1.1);}
       }
     </style>
 </head>
@@ -25,59 +27,60 @@
   <section class="click-wrapper">
     <p class="bg-txt">Let's Click !</p>
   </section>
-  <!--
-    참고 : https://www.youtube.com/watch?v=bQzTUsMqagM / 국제강아지의날_네이버
-    https://devjaewoo.tistory.com/6    
-  -->
+  <!-- //section : click area -->
+  <button type="button" class="btn-start">Game Start</button>
+
   <script>
     const body = document.querySelector('body');
+    const btnStart = document.querySelector('.btn-start');
     const clickArea = document.querySelector('.click-wrapper');
     let direction;
-    body.addEventListener('click', (e)=>{
-      let x = e.pageX - e.target.offsetLeft;
-      let y = e.pageY - e.target.offsetTop;
+
+    body.style = `box-shadow: 0 0 0 ${window.innerWidth / 2}px #fff inset;`
+    btnStart.addEventListener('click',(e)=>{
+      body.style = `box-shadow: 0 0 0 0 #fff inset;`
+      clickArea.classList.add('on');
+      e.target.remove();
+    })
+
+    clickArea.addEventListener('click', (e)=>{
       let splash = document.createElement('div');
-      splash.innerHTML = '<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_daZky5.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop  autoplay></lottie-player>'
+      splash.innerHTML = '<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_daZky5.json"  background="transparent"  speed="1"  style=" width: 100px; height:100px;" loop  autoplay></lottie-player>'
       splash.className = 'splash';
-      splash.style.left = `${x}px`;
-      splash.style.top = `${y}px`;
+      splash.style.top = `${event.clientY}px`;
       clickArea.append(splash);
 
-      x < (window.innerWidth / 2) ? direction = 'left' : direction = 'right';
-      console.log(direction)
-      
-      if(x >= window.innerWidth - 150){
-        console.log('넘음');
-        splash.style.left = `${window.innerWidth - 150}px`;
-        return;
+      const bodyHalf = window.innerWidth / 2;
+      const splashHalf = splash.offsetWidth / 2;
+
+      console.log(splashHalf)
+
+      if(event.clientX > bodyHalf){
+        direction = 'right'; 
       }else{
-        console.log('안넘음')
-        let cnt = x;
-        let setTmp = setInterval(() => {
+        direction = 'left';
+      }
+
+      let cnt = event.clientX;
+        let moveIcon = setInterval(() => {
           if(direction == 'left'){
-            cnt = cnt + 30;
-            if(cnt >= window.innerWidth - 150) {
-              clearInterval(setTmp);
+            cnt = cnt + 10;
+            if(cnt >= window.innerWidth + splashHalf) {
+              clearInterval(moveIcon);
+              splash.remove();
             }
-            splash.style.left = `${x + cnt}px`;
           }else{
-            cnt = cnt - 30;
-            if(cnt <= 0) {
-              clearInterval(setTmp);
-              splash.style.left = `150px`;
+            cnt = cnt - 10;
+            if(cnt <= -splashHalf) {
+              clearInterval(moveIcon);
+              splash.remove();
               return;
             }
-            splash.style.left = `${cnt}px`;
+            
           }
-          // console.log(cnt);
-        }, 1);
-      }
-      // setTimeout(() => {
-      //   splash.remove();
-      // }, 3000);
-      // console.log(e.pageX, e.target)
-    })
-    
+          splash.style.left = `${cnt}px`;
+        }, 15);
+    })//click evt
   </script>
 
 </body>
