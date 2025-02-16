@@ -2,6 +2,8 @@ const btnPrev = document.querySelector(".viewer-btns .prev");
 const btnNext = document.querySelector(".viewer-btns .next");
 const browser_PC = document.querySelector(".browser.pc");
 const browser_MB = document.querySelector(".browser.mb");
+const inner_PC = browser_PC.querySelector(".inner");
+const inner_MB = browser_MB.querySelector(".inner");
 const img_PC = browser_PC.querySelector("img");
 const img_MB = browser_MB.querySelector("img");
 let viewIndex = 0;
@@ -50,8 +52,8 @@ const updateButtons = () => {
   } else {
     btnNext.removeAttribute("disabled");
   }
-  //   browser_PC.scrollTop = 0;
-  //   browser_MB.scrollTop = 0;
+  inner_PC.scrollTo({ top: 0, behavior: "instant" });
+  inner_MB.scrollTo({ top: 0, behavior: "instant" });
 };
 //init
 setting_IMG();
