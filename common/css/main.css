@@ -1158,3 +1158,17 @@ img {
 .viewer-btns > button:disabled {
   background: rgba(0, 0, 0, 0.2);
 }
+/* 251024 */
+.index-wrap .profile-info .profile-step .work_detail_list{
+  margin-top: 24px;
+}
+.index-wrap .profile-info .profile-step .work_detail_list li{
+ font-size: 14px;
+}
+.index-wrap .profile-info .profile-step .work_detail_list li::before{
+  content: "-";
+}
+.index-wrap .profile-info .profile-step .work_detail_list li + li{
+  margin-top: 6px;
+  border-top: 0;
+}
