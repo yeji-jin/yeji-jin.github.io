@@ -408,7 +408,7 @@ img {
 .index-wrap .profile {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   gap: 100px;
   padding: 60px 24px;
   line-height: 1.6;
